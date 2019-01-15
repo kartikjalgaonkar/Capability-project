@@ -23,6 +23,7 @@
       <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
       <!-- Excluded Spring Boot main() method from coverage -->
       <sonar.exclusions>/src/main/java/com/yash/microservices/feedback/Application.java</sonar.exclusions>
+       <sonar.exclusions>/src/test/java/com/yash/microservices/feedback/ApplicationTests.java</sonar.exclusions>
       <sonar.jacoco.reportPaths>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPaths>
       <sonar.sources>src/main/java</sonar.sources>
       <sonar.tests>src/test/java</sonar.tests>
