@@ -10,7 +10,6 @@ node {
 
     stage('Build image') {
        sh 'mvn clean install'
-        sh 'mvn sonar:sonar'
         
     
         /* This builds the actual image; synonymous to
@@ -45,5 +44,19 @@ node {
                 break
         }
     }
+    
+    stage('Sonarqube') {
+        environment {
+            scannerHome = tool 'SonarQubeScanner'
+        }
+    steps {
+        withSonarQubeEnv('sonarqube') {
+            sh "${scannerHome}/bin/sonar-scanner"
+        }
+        timeout(time: 10, unit: 'MINUTES') {
+            waitForQualityGate abortPipeline: true
+        }
+    }
+}
    
 }
