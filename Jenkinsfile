@@ -10,6 +10,7 @@ node {
 
     stage('Build image') {
        sh 'mvn clean install'
+        sh 'mvn sonar:sonar'
         
     
         /* This builds the actual image; synonymous to
