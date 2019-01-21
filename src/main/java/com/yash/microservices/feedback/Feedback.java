@@ -15,8 +15,12 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Feedback implements Identifiable<Long> {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   
+
+	
+	@Id
+	@SequenceGenerator(name="SEQ_GEN", sequenceName="feedback_id_seq", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_GEN")
     private Long id;
 
     private String username;
