@@ -93,13 +93,19 @@
 * To set up our installation, we'll visit Jenkins on its default port, 8080, using the server domain name or IP address: http://ip_address_or_domain_name:8080
 
 * We should see "Unlock Jenkins" screen, which displays the location of the initial password
+![unlock-jenkins](images/unlock-jenkins.png)
 * In the terminal window, we'll use the cat command to display the password:
   ```
   $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
   ```
 * We'll copy the 32-character alphanumeric password from the terminal and paste it into the "Administrator password" field, then click "Continue". The next screen presents the option of installing suggested plugins or selecting specific plugins.
+![jenkins-customize](images/jenkins-customize.png)
 * We'll click the "Install suggested plugins" option, which will immediately begin the installation process.
+![jenkins-plugins](images/jenkins-plugins.png)
 * When the installation is complete, we'll be prompted to set up the first administrative user. It's possible to skip this step and continue as admin using the initial password we used above, but we'll take a moment to create the user.
+![jenkins-first-admin](images/jenkins-first-admin.png)
 * Once the first admin user is in place, you should see a "Jenkins is ready!" confirmation screen.
-
+![jenkins-ready](images/jenkins-ready.png)
+* Click start using jenkins to visit the main Jenkins dashboard.
+![jenkins-using](images/jenkins-using.png)
 </details>
