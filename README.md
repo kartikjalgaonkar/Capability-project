@@ -108,4 +108,6 @@
 ![jenkins-ready](images/jenkins-ready.png)
 * Click start using jenkins to visit the main Jenkins dashboard.
 ![jenkins-using](images/jenkins-using.png)
+
+* At this point, Jenkins has been successfully installed.
 </details>
