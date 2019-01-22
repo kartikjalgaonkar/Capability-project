@@ -284,3 +284,38 @@
   Dec 02 13:55:34 ubuntu1804 systemd[1]: Started SonarQube service.
   ```
 </details>
+
+<details>
+<summary>Sonar Scanner Installation</summary>
+  
+* create a directory
+  ```
+  $ sudo mkdir /opt/sonarscanner
+  $ cd /opt/sonarscanner
+  ```
+* download sonar scanner:
+  ```
+  $ https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner
+  ```
+* Extract the zip file
+  ```
+  $ sudo unzip sonar-scanner-cli-3.0.3.778-linux.zip
+  ```
+* remove downloaded zip file
+  ```
+  $ sudo rm sonar-scanner-cli-3.0.3.778-linux.zip
+  ```
+* open sonar-scanner.properties file
+  ```
+  $ sudo nano sonar-scanner-3.0.3.778-linux/conf/sonar-scanner.properties
+  ```
+* add below line in property file
+  ```
+  sonar.host.url=https://localhost:9000
+  ```
+* change permission of scanner
+  ```
+  $ sudo chmod +x sonar-scanner-3.0.3.778-linux/bin/sonar-scanner
+  ```
+
+</details>
