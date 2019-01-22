@@ -111,3 +111,50 @@
 
 * At this point, Jenkins has been successfully installed.
 </details>
+
+<details>
+<summary>Github</summary>
+
+* Create account on github so that you can store your code in online repository.
+</details>
+
+<details>
+<summary>PostgreSQL Installation</summary>
+  
+* Before proceeding with installation of any kind of package, use the following command to update your Ubuntu system. To execute this command, remember to login from non-root user with sudo privileges. 
+  ```
+  $ sudo apt-get update
+  ```
+* Now install postgresql using this command.
+  ```
+  $ sudo apt-get install postgresql postgresql-contrib
+  ```
+  **Using postgresql**
+  
+* Start the postgresql service by using folowing command:
+  ```
+  $ sudo service postgresql start
+  ```
+* locate pg_hba.conf file in your system using command:
+  ```
+  $ locate pg_hba.conf
+  ```
+* add following line in _IPV4 local connection_ of pg_hba.conf file so that docker image can be connected to your local databse.
+  ```
+  host    all   	        all             <ip address of your machine>/32         md5
+  ```
+* Switch over to the postgres account on your server by typing:
+  ```
+  $ sudo -i -u postgres
+  ```
+* You can now access a Postgres prompt immediately by typing:
+  ```
+  $ psql
+  ```
+* You will be logged in and able to interact with the database management system right away.
+
+* Exit out of the PostgreSQL prompt by typing:
+  ```
+  postgres=# \q
+  ```
+</details>
