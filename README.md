@@ -3,12 +3,12 @@
 
 # Table of Content
 * [Required softwares](#required_softwares)
-* [Software Installation](##software_installation)
+* [Software Installation](#software_installation)
 * [Using the application](#using-application)
 
 
 ## <a name="required_s oftwares"></a>Required softwares
-* [STS](https://spring.io/tools)
+* [STS](#https://spring.io/tools)
 * [Jenkins](https://jenkins.io/)
 * [GitHub](https://github.com/)
 * [Sonarqube](https://www.sonarqube.org/)
