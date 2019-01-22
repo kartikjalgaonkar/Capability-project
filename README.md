@@ -22,7 +22,11 @@
 ---
 
 ## <a name="software_installation"></a>Software Installation
-**Jenkins Installation**
+
+<details>
+  
+   <summary>Jenkins Installation</summary>
+   
 * First, we'll add the repository key to the system.
   ```
   $ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
@@ -43,3 +47,8 @@
   ```
   $ sudo systemctl start jenkins
   ```
+* By default, Jenkins runs on port 8080, so we'll open that port using ufw:
+  ```
+  $ sudo ufw allow 8080
+  ```
+</details>
