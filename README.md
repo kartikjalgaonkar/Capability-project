@@ -25,8 +25,10 @@
 
 <details>
   
-   <summary>Jenkins Installation</summary>
-**Step 1 — Installing Jenkins**
+<summary>Jenkins Installation</summary>
+
+ **Step 1 — Installing Jenkins**
+
 * First, we'll add the repository key to the system.
   ```
   $ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
@@ -43,7 +45,8 @@
   ```
   $ sudo apt-get install jenkins
   ```
-**Step 2 — Starting Jenkins**
+ **Step 2 — Starting Jenkins**
+
 * Now that Jenkins and its dependencies are in place, we'll start the Jenkins server.
   ```
   $ sudo systemctl start jenkins
@@ -60,7 +63,7 @@
   Active:active (exited) since Thu 2017-04-20 16:51:13 UTC; 2min 7s ago
     Docs: man:systemd-sysv-generator(8)
   ```
-**Step 3 — Opening the Firewall**
+ **Step 3 — Opening the Firewall**  
 * By default, Jenkins runs on port 8080, so we'll open that port using ufw:
   ```
   $ sudo ufw allow 8080
@@ -86,7 +89,7 @@
   $ sudo ufw allow OpenSSH
   $ sudo ufw enable
   ```
-**Step 4 — Setting up Jenkins**
+ **Step 4 — Setting up Jenkins**
 * To set up our installation, we'll visit Jenkins on its default port, 8080, using the server domain name or IP address: http://ip_address_or_domain_name:8080
 
 * We should see "Unlock Jenkins" screen, which displays the location of the initial password
