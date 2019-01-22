@@ -164,10 +164,31 @@
 
 <details>
 <summary>Sonarqube Installation</summary>
-  
+
 * First, create a user for SonarQube with the following command:
   ```
   $ sudo adduser sonar
+  ```
+* switch to the postgres user with the following command
+  ```
+  $ sudo su postgres
+  ```
+* Next, switch to the PostgreSQL shell with the following command:
+  ```
+  psql
+  ```
+* Next, set password for sonar user and create a sonar database with the following command:
+  ```
+  psql=# ALTER USER sonar WITH ENCRYPTED password 'password';
+  psql=# CREATE DATABASE sonar OWNER sonar;
+  ```
+* Next, extit from the PostgreSQL shell:
+  ```
+  psql=# \q
+  ```
+* Now exit from postgres user
+  ```
+  $ exit
   ```
 * Next, download the latest version of SonarQube with the following command:
   ```
