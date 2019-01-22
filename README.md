@@ -411,3 +411,78 @@
 * Terminal will look like this
 ![minikube-1](images/minikube-1.png)
 </details>
+
+<details>
+<summary>Zookeeper Installation</summary>
+
+* Install zookeper using command
+  ```
+  $ sudo apt-get install zookeeperd
+  ```
+* we will now check if Zookeeper is alive and if it’s OK 😛
+  ```
+  $ telnet localhost 2181
+  ```
+* at Telnet prompt, we will enter
+  ```
+  ruok
+  ```
+* (are you okay) if it’s all okay it will end telnet session and reply with
+  ```
+  imok
+  ```
+* Start zookeeper service using 
+  ```
+  $ sudo /usr/share/zookeeper/bin/zkServer.sh start-foreground
+  ```
+* 
+</details>
+
+<details>
+  <summary>Kafka Installation</summary>
+  
+* Download kafka
+  ```
+  $ wget wget http://mirrors.estointernet.in/apache/kafka/2.1.0/kafka_2.11-2.1.0.tgz
+  ```
+* Next, create a directory for Kafka installation:
+  ```
+  $ sudo mkdir /opt/Kafka
+  $ cd /opt/Kafka
+  ```
+* Extract the downloaded archive using tar command in /opt/Kafka:
+  ```
+  sudo tar -xvf kafka_2.11-2.1.0.tgz -C /opt/Kafka/
+  ```
+* The next step is to start Kafka server, you can start it by running kafka-server-start.sh script located at /opt/Kafka/kafka_2.11-2.1.0/bin/ directory.
+  ```
+  $ sudo /opt/Kafka/kafka_2.11-2.1.0/bin/kafka-server-start.sh /opt/Kafka/kafka_2.11-2.1.0/config/server.properties
+  ```
+  **Testing installation**
+*
+* In a terminal start a kafka server
+  ```
+  sudo /opt/Kafka/kafka_2.11-2.1.0/bin/kafka-server-start.sh /opt/Kafka/kafka_2.11-2.1.0/config/server.properties
+  ```
+* In another terminal create a topic
+  ```
+  $ sudo /opt/Kafka/kafka_2.11-2.1.0/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+  ```
+* List all topics with the command below and it will print test the topic we just created
+  ```
+  $ /opt/Kafka/kafka_2.11-2.1.0/bin/kafka-topics.sh --list --zookeeper localhost:2181
+  ```
+* Let’s start publishing messages on test topic
+  ```
+  $ /opt/Kafka/kafka_2.11-2.1.0/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+  ```
+* We will now create a subscriber on test topic and listen from the beginning of the topic.
+  ```
+  $ /opt/Kafka/kafka_2.11-2.1.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+  ```
+* Enter some message in the producer
+  ```
+  $ Hello world!!!
+  ```
+* You will see the messages appearing on the subscriber terminal.
+</details>
