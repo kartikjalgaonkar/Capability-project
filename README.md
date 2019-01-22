@@ -459,7 +459,7 @@
   $ sudo /opt/Kafka/kafka_2.11-2.1.0/bin/kafka-server-start.sh /opt/Kafka/kafka_2.11-2.1.0/config/server.properties
   ```
   **Testing installation**
-*
+
 * In a terminal start a kafka server
   ```
   sudo /opt/Kafka/kafka_2.11-2.1.0/bin/kafka-server-start.sh /opt/Kafka/kafka_2.11-2.1.0/config/server.properties
