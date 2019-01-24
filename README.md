@@ -638,8 +638,11 @@ We need to add following files in the root directory of application.
   <summary>Dockerfile</summary>
 
   * Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. A Dockerfile must start with a `FROM` instruction. The FROM instruction specifies the Base Image from which you are building. 
+  * The VOLUME instruction creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers. 
   * The ADD instruction copies new files, directories or remote file URLs from <src> and adds them to the filesystem of the image at the path <dest>.
   * The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime.
+  * An ENTRYPOINT allows you to configure a container that will run as an executable.
+  ![Dockerfile](Dockerfile.png)
 </details>
   <details><summary>Jenkinsfile</summary></details>
   <details><summary>deployment.yml</summary></details>
