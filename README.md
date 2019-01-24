@@ -5,7 +5,7 @@
 * [Required softwares](#required_softwares)
 * [Software Installation](#software_installation)
 * [Jenkins configuration](#jenkins_configuration)
-
+---
 
 ## <a name="required_s oftwares"></a>Required softwares
 * [STS](https://spring.io/tools)
@@ -628,6 +628,11 @@
   $ sudo systemctl enable logstash
   ```
 </details>
-
+---
 
 ## <a name="jenkins_configuration"></a>Jenkins Configuration
+```diff
+- Pre-requisite before configuring jenkins to create a pipeline:
+  + Create a github account to create a repository of your code.
+  + Create a docker account to store docker image of your application.
+```
