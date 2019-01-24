@@ -454,6 +454,14 @@
   ```
   sudo tar -xvf kafka_2.11-2.1.0.tgz -C /opt/Kafka/
   ```
+* open server.properties using following command
+  ```
+  sudo nano /opt/Kafka/kafka_2.11-2.1.0/config/server.properties
+  ```
+* add following line to the file
+  ```
+  listeners=PLAINTEXT://<io address of your machine>:9092
+  ```
 * The next step is to start Kafka server, you can start it by running kafka-server-start.sh script located at /opt/Kafka/kafka_2.11-2.1.0/bin/ directory.
   ```
   $ sudo /opt/Kafka/kafka_2.11-2.1.0/bin/kafka-server-start.sh /opt/Kafka/kafka_2.11-2.1.0/config/server.properties
