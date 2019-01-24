@@ -642,7 +642,7 @@ We need to add following files in the root directory of application.
   * The ADD instruction copies new files, directories or remote file URLs from <src> and adds them to the filesystem of the image at the path <dest>.
   * The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime.
   * An ENTRYPOINT allows you to configure a container that will run as an executable.
-  ![Dockerfile](Dockerfile.png)
+  ![Dockerfile](images/Dockerfile.png)
 </details>
   <details><summary>Jenkinsfile</summary></details>
   <details><summary>deployment.yml</summary></details>
