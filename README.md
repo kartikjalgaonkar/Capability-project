@@ -643,7 +643,7 @@ We need to add following files in the root directory of application.
   * The ADD instruction copies new files, directories or remote file URLs from <src> and adds them to the filesystem of the image at the path <dest>.
   * The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime.
   * An ENTRYPOINT allows you to configure a container that will run as an executable.
-  ![Dockerfile](images/Dockerfile.png)
+  * Sample: [Dockerfile](https://github.com/kartikjalgaonkar/Capability-project/blob/master/Dockerfile)
 </details>
   
 <details>
@@ -656,13 +656,38 @@ We need to add following files in the root directory of application.
   * Sample: [Jenkinsfile](https://github.com/kartikjalgaonkar/Capability-project/blob/master/Jenkinsfile)
 </details>
   
-  <details><summary>deployment.yml</summary></details>
+<details>
+  <summary>deployment.yml</summary>
   
-  <details><summary>service.yml</summary></details>
+  * This file contains all the information related to deployment like name of deploymnet, number of replicas to be created, which image to be used for deployment, etc.
+  * Sample: [deployment.yml](https://github.com/kartikjalgaonkar/Capability-project/blob/master/deployment.yml)
+</details>
   
-  <details><summary>ingress.yml</summary></details>
+<details>
+  <summary>service.yml</summary>
   
-  <details><summary>hpa.yml</summary></details>
+  * A Kubernetes Service is an abstraction which defines a logical set of Pods and a policy by which to access them - sometimes called a micro-service. The set of Pods targeted by a Service is (usually) determined by a Label Selector.
+  * Sample: [service.yml](https://github.com/kartikjalgaonkar/Capability-project/blob/master/service.yml)
+</details>
+  
+<details>
+  <summary>ingress.yml</summary>
+
+  * Ingress, added in Kubernetes v1.1, exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
+  * An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name based virtual hosting. An ingress controller is responsible for fulfilling the ingress, usually with a loadbalancer, though it may also configure your edge router or additional frontends to help handle the traffic.
+  * An ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+  * Sample: [ingress.yml](https://github.com/kartikjalgaonkar/Capability-project/blob/master/ingress.yml)
+</details>
+  
+<details>
+  <summary>hpa.yml</summary>
+  
+  * hpa stands for Horizontal Pod Autoscaler. It automatically scales the number of pods in a replication controller, deployment or replica set based on observed CPU utilization.
+  * Before applying hpa.yml file make sure that _heapster_ and _metrics-server_ are enabled on your system.
+  * To check, use **minikube addons**
+  * To enable addon, use **minikube addons enable addon-name**
+  * Sample: [hpa.yml](https://github.com/kartikjalgaonkar/Capability-project/blob/master/hc-feedback-hpa.yaml)
+</details>
   
   <details><summary>sonar-project.properties</summary></details>
 
