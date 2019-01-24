@@ -4,7 +4,7 @@
 # Table of Content
 * [Required softwares](#required_softwares)
 * [Software Installation](#software_installation)
-* [Using the application](#using-application)
+* [Jenkins configuration](#jenkins_configuration)
 
 
 ## <a name="required_s oftwares"></a>Required softwares
@@ -24,7 +24,6 @@
 ## <a name="software_installation"></a>Software Installation
 
 <details>
-  
 <summary>Jenkins Installation</summary>
 
  **Step 1 — Installing Jenkins**
@@ -629,3 +628,6 @@
   $ sudo systemctl enable logstash
   ```
 </details>
+
+
+## <a name="jenkins_configuration"></a>Jenkins Configuration
