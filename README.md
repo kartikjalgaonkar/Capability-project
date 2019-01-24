@@ -648,6 +648,7 @@ We need to add following files in the root directory of application.
   
 <details>
   <summary>Jenkinsfile</summary>
+  
   * Jenkins Pipeline is a suite of Jenkins features, installed as plugins, which enable implementation of continuous delivery pipelines, which are the automated processes for getting software from source control through deployment to end users.
   * A Jenkinsfile is a text file that contains the definition of a Jenkins Pipeline and is checked into source control.
   * We will be designing Jenkisfile using groovy script.
