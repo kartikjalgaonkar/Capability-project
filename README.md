@@ -628,6 +628,7 @@
   $ sudo systemctl enable logstash
   ```
 </details>
+
 ---
 
 ## <a name="jenkins_configuration"></a>Jenkins Configuration
@@ -636,6 +637,18 @@
 + Create a github account to create a repository of your code.
 + Create a docker account to store docker image of your application.
 ```
+<details>
+  <summary>Jenkins plugins</summary>
+  
+Add following plugins to jenkins
+  * Docker plugin
+  * GitHub Integration Plugin
+  * Kafka Logs Plugin
+  * Kubernetes Continuous Deploy Plugin
+  * Pipeline: GitHub Groovy Libraries
+  * SonarQube Scanner for Jenkins
+</details>
+
 <details>
   <summary>Adding github and docker credentials to jenkins</summary>
   
