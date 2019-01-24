@@ -550,3 +550,74 @@
   }
   ```
 </details>
+
+<details>
+  <summary>Kibana installation</summary>
+  
+* use below command to install kibana
+  ```
+  $ sudo apt install kibana
+  ```
+* Then enable and start the Kibana service:
+  ```
+  $ sudo systemctl enable kibana
+  $ sudo systemctl start kibana
+  ```
+* By default, Kibana listens on localhost which means you can not access Kibana web interface from external machines.
+* To enale the access, edit /etc/kibana/kibana.yml file.
+  ```
+  $ sudo nano /etc/kibana/kibana.yml
+  ```
+* Make changes to the below line with your server IP address.
+  ```
+  server.host: <ip address of your machine>
+  ```
+* Also, some cases Elasticsearch and Kibana run on different machines, so update the below line with IP address of Elasticsearch server.
+  ```
+  elasticsearch.url: "http://localhost:9200"
+  ```
+* Start and enable Kibana on machine startup.
+  ```
+  $ sudo systemctl restart kibana
+  $ sudo systemctl enable kibana
+  ```
+</details>
+
+<details>
+  <summary>Logstash Installation</summary>
+  
+* Install Logstash with this command:
+  ```
+  $ sudo apt install logstash
+  ```
+* After installing Logstash, you can move on to configuring it. Logstash's configuration files are written in the JSON format and reside in the /etc/logstash/conf.d directory. As you configure it, it's helpful to think of Logstash as a pipeline which takes in data at one end, processes it in one way or another, and sends it out to its destination (in this case, the destination being Elasticsearch). A Logstash pipeline has two required elements, input and output, and one optional element, filter. The input plugins consume data from a source, the filter plugins process the data, and the output plugins write the data to a destination.
+
+* Create a configuration file called **logstash-kafka.conf**
+  ```
+  input {
+    kafka {
+            bootstrap_servers => "<ip address mentioned in kafka>:9092"
+            topics => ["feedback-api"]
+    }
+  }
+
+  output {
+     elasticsearch {
+        hosts => ["localhost:9200"]
+        index => "feedback-api"
+        workers => 1
+      }
+  }
+  ```
+* Save and close the file.
+* Test your Logstash configuration with this command:
+  ```
+  $ sudo -u logstash /usr/share/logstash/bin/logstash --path.settings /etc/logstash -t
+  ```
+* If there are no syntax errors, your output will display Configruation OK after a few seconds. If you don't see this in your output, check for any errors that appear in your output and update your configuration to correct them.
+* If your configuration test is successful, start and enable Logstash to put the configuration changes into effect:
+  ```
+  $ sudo systemctl start logstash
+  $ sudo systemctl enable logstash
+  ```
+</details>
