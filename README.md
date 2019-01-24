@@ -689,7 +689,12 @@ We need to add following files in the root directory of application.
   * Sample: [hpa.yml](https://github.com/kartikjalgaonkar/Capability-project/blob/master/hc-feedback-hpa.yaml)
 </details>
   
-  <details><summary>sonar-project.properties</summary></details>
+<details>
+  <summary>sonar-project.properties</summary>
+
+  * To generate sonar report, we need sonar-project.properties file.
+  * Sample: [sonar-project.properties](https://github.com/kartikjalgaonkar/Capability-project/blob/master/sonar-project.properties)
+</details>
 
 ## <a name="jenkins_configuration"></a>Jenkins Configuration
 ```diff
