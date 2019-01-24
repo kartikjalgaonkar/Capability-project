@@ -4,6 +4,7 @@
 # Table of Content
 * [Required softwares](#required_softwares)
 * [Software Installation](#software_installation)
+* [Application setup](#application_setup)
 * [Jenkins configuration](#jenkins_configuration)
 ---
 
@@ -630,6 +631,22 @@
 </details>
 
 ---
+## <a name="application_setup"></a>Application setup
+Create a spring boot application.
+We need to add following files in the root directory of application.
+  <details>
+  <summary>Dockerfile</summary>
+
+  * Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. A Dockerfile must start with a `FROM` instruction. The FROM instruction specifies the Base Image from which you are building. 
+  * The ADD instruction copies new files, directories or remote file URLs from <src> and adds them to the filesystem of the image at the path <dest>.
+  * The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime.
+</details>
+  <details><summary>Jenkinsfile</summary></details>
+  <details><summary>deployment.yml</summary></details>
+  <details><summary>service.yml</summary></details>
+  <details><summary>ingress.yml</summary></details>
+  <details><summary>hpa.yml</summary></details>
+  <details><summary>sonar-project.properties</summary></details>
 
 ## <a name="jenkins_configuration"></a>Jenkins Configuration
 ```diff
