@@ -633,6 +633,13 @@
 ## <a name="jenkins_configuration"></a>Jenkins Configuration
 ```diff
 - Pre-requisite before configuring jenkins to create a pipeline:
-  + Create a github account to create a repository of your code.
-  + Create a docker account to store docker image of your application.
++ Create a github account to create a repository of your code.
++ Create a docker account to store docker image of your application.
 ```
+<details>
+  <summary>Adding github and docker credentials to jenkins</summary>
+  
+* Start jenkins
+* go to credentials --> System --> Global credentials(unrestricted) --> add credentials.
+![jenkins credentails](images/jenkins credentails.png)
+</details>
