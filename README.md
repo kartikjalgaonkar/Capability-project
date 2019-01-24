@@ -488,7 +488,7 @@
 </details>
 
 <details>
-  <suammry>Elasticsearch Installation</summary>
+  <summary>Elasticsearch Installation</summary>
   
 * To begin, run the following command to import the Elasticsearch public GPG key into APT:
   ```
