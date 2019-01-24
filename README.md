@@ -641,5 +641,6 @@
   
 * Start jenkins
 * go to credentials --> System --> Global credentials(unrestricted) --> add credentials.
-![jenkins credentails](images/jenkins credentails.png)
+![jenkins_credentails](images/jenkins_credentails.png)
+* add docker and git credentials in this tab. Give unique id because it will be used in jenkins pipeline.
 </details>
