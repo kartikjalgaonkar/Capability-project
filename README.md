@@ -634,6 +634,7 @@
 ## <a name="application_setup"></a>Application setup
 Create a spring boot application.
 We need to add following files in the root directory of application.
+  
   <details>
   <summary>Dockerfile</summary>
 
@@ -644,11 +645,24 @@ We need to add following files in the root directory of application.
   * An ENTRYPOINT allows you to configure a container that will run as an executable.
   ![Dockerfile](images/Dockerfile.png)
 </details>
-  <details><summary>Jenkinsfile</summary></details>
+  
+<details>
+  <summary>Jenkinsfile</summary>
+  * Jenkins Pipeline is a suite of Jenkins features, installed as plugins, which enable implementation of continuous delivery pipelines, which are the automated processes for getting software from source control through deployment to end users.
+  * A Jenkinsfile is a text file that contains the definition of a Jenkins Pipeline and is checked into source control.
+  * We will be designing Jenkisfile using groovy script.
+  * It contains various stages of CI/CD (from pulling code to its deployment).
+  * Sample: [Jenkinsfile](https://github.com/kartikjalgaonkar/Capability-project/blob/master/Jenkinsfile)
+</details>
+  
   <details><summary>deployment.yml</summary></details>
+  
   <details><summary>service.yml</summary></details>
+  
   <details><summary>ingress.yml</summary></details>
+  
   <details><summary>hpa.yml</summary></details>
+  
   <details><summary>sonar-project.properties</summary></details>
 
 ## <a name="jenkins_configuration"></a>Jenkins Configuration
