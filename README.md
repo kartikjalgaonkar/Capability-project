@@ -486,3 +486,67 @@
   ```
 * You will see the messages appearing on the subscriber terminal.
 </details>
+
+<details>
+  <suammry>Elasticsearch Installation</summary>
+  
+* To begin, run the following command to import the Elasticsearch public GPG key into APT:
+  ```
+  $ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+  ```
+* Next, add the Elastic source list to the sources.list.d directory, where APT will look for new sources:
+  ```
+  $ echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+  ```
+* Next, update your package lists so APT will read the new Elastic source:
+  ```
+  $ sudo apt update
+  ```
+* Then install Elasticsearch with this command:
+  ```
+  $ sudo apt install elasticsearch
+  ```
+* Once Elasticsearch is finished installing, use your preferred text editor to edit Elasticsearch's main configuration file, elasticsearch.yml. Here, we'll use nano:
+  ```
+  $ sudo nano /etc/elasticsearch/elasticsearch.yml
+  ```
+* Elasticsearch listens for traffic from everywhere on port 9200. You will want to restrict outside access to your Elasticsearch instance to prevent outsiders from reading your data or shutting down your Elasticsearch cluster through the REST API. Find the line that specifies network.host, uncomment it, and replace its value with localhost so it looks like this:
+  ```
+  ...
+  network.host: localhost
+  ...
+  ```
+* Save and close elasticsearch.yml by pressing CTRL+X, followed by Y and then ENTER if you're using nano. Then, start the Elasticsearch service with systemctl:
+  ```
+  $ sudo systemctl start elasticsearch
+  ```
+* Next, run the following command to enable Elasticsearch to start up every time your server boots:
+  ```
+  $ sudo systemctl enable elasticsearch
+  ```
+* You can test whether your Elasticsearch service is running by sending an HTTP request:
+  ```
+  $ curl -X GET "localhost:9200"
+  ```
+* You will see a response showing some basic information about your local node, similar to this:
+  ```
+  Output
+  {
+    "name" : "ZlJ0k2h",
+    "cluster_name" : "elasticsearch",
+    "cluster_uuid" : "beJf9oPSTbecP7_i8pRVCw",
+    "version" : {
+      "number" : "6.4.2",
+      "build_flavor" : "default",
+      "build_type" : "deb",
+      "build_hash" : "04711c2",
+      "build_date" : "2018-09-26T13:34:09.098244Z",
+      "build_snapshot" : false,
+      "lucene_version" : "7.4.0",
+      "minimum_wire_compatibility_version" : "5.6.0",
+      "minimum_index_compatibility_version" : "5.0.0"
+    },
+    "tagline" : "You Know, for Search"
+  }
+  ```
+</details>
