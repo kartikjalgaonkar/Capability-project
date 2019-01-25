@@ -736,7 +736,7 @@ Add following plugins to jenkins
   
   * go to sonar --> administration --> webhooks --> add jenkins pipeline url
   
-  ![3-sonar-jenkins-configuretion](!images/3-sonar-jenkins-configuretion.png)
+  ![3-sonar-jenkins-configuretion](images/3-sonar-jenkins-configuretion.png)
   
   * go to jenkins --> manage jenkins --> Global Tool Configuration --> SonarQube Scanner 
   * add path of sonar scanner in SONAR_RUNNER_HOME
