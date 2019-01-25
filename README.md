@@ -720,5 +720,12 @@ Add following plugins to jenkins
 * Start jenkins
 * go to credentials --> System --> Global credentials(unrestricted) --> add credentials.
 ![jenkins_credentails](images/jenkins_credentails.png)
-* add docker and git credentials in this tab. Give unique id because it will be used in jenkins pipeline.
+* add docker, git and sonar credentials in this tab. Give unique id because it will be used in jenkins pipeline.
+</details>
+
+<details>
+  <summary>Sonar configuration with jenkins</summary>
+
+  * go to sonar url --> click on My account(http://localhost:9000/account/security/) --> Generate Token
+  ![2-generate_token_in_sonar](images/2-generate_token_in_sonar.png)
 </details>
