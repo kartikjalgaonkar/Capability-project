@@ -727,5 +727,21 @@ Add following plugins to jenkins
   <summary>Sonar configuration with jenkins</summary>
 
   * go to sonar url --> click on My account(http://localhost:9000/account/security/) --> Generate Token
+  
   ![2-generate_token_in_sonar](images/2-generate_token_in_sonar.png)
+  
+  * go to jenkins --> Manage jenkins --> Configure jenkins --> SonarQube servers --> Enable Environment variables and add sonar details --> add Server authentication token generated in above step.
+  
+  ![4-sonarQubeServerInJenkins](images/4-sonarQubeServerInJenkins.png)
+  
+  * go to sonar --> administration --> webhooks --> add jenkins pipeline url
+  
+  ![3-sonar-jenkins-configuretion](!images/3-sonar-jenkins-configuretion.png)
+  
+  * go to jenkins --> manage jenkins --> Global Tool Configuration --> SonarQube Scanner 
+  * add path of sonar scanner in SONAR_RUNNER_HOME
+  
+  ![5-sonarQubeScannerInJenkins](images/5-sonarQubeScannerInJenkins.png)
+  
+  * You are done with sonar configuration in Jenkins!!
 </details>
